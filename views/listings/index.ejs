@@ -1,0 +1,160 @@
+<% layout("/layouts/boilerPlate") %>
+<style>
+  .filters{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .filter{
+    text-align: center;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    opacity: 0.8;
+  }
+  .filter:hover{
+    opacity: 1;
+  }
+  .filter a{
+    text-decoration: none;
+  }
+  .filter p{
+    font-size: 0.8rem;
+    
+  }
+  .form-check-label p{
+    font-size: 0.8rem;
+  }
+  .toggleSwitch {
+    text-align: right;
+    margin-top: 1rem;
+  }
+  .filters a{
+    text-decoration: none;
+     color:#222222;
+  }
+  @media (max-width: 768px) {
+  .show-on-small {
+    display: block; /* or inline-block, flex, etc. as needed */
+  }
+  .hide-on-small {
+    display: none;
+  }
+}
+@media (max-width: 358px) {
+  .show-on-small {
+    display: none; /* or inline-block, flex, etc. as needed */
+  }
+  .hide-on-small {
+    display: none;
+  }
+}
+/* CSS for larger screens */
+@media (min-width: 768px) {
+  .show-on-small {
+    display: block;
+  }
+  .hide-on-small {
+    display: block; /* or inline-block, flex, etc. as needed */
+    }}
+
+  .tax-info{
+    display: none;
+  }
+  .toggleSwitch{
+    border: 1px solid black;
+    height:3.25rem;
+    border-radius: 1rem;
+    padding: 1rem 1rem 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+  }
+</style>
+
+  <div class="row row-cols-lg-1 row-cols-md-1 row-cols-sm-1">
+    <div class="filters mb-2">
+      <div class="col">
+        <a href="/listings/categoryListings/iconic cities"><div class="filter show-on-small">
+        <div><i class="fa-solid fa-mountain-city"></i></div>
+        <p>Iconic Cities</p>
+        </div></a>
+      </div>
+      <div class="col"><a href="/listings/categoryListings/mountain" ><div class="filter show-on-small">
+        <div><i class="fa-solid fa-mountain"></i></div>
+        <p>mountain</p>
+      </div></a></div>   
+      <div class="col"><a href="/listings/categoryListings/castle"><div class="filter show-on-small">
+        <div><i class="fa-brands fa-fort-awesome"></i></div>
+           <p>Castles</p>
+         </div></a></div>
+ 
+              <div class="col"><a href="/listings/categoryListings/Amazing pool"><div class="filter hide-on-small">
+                <div><i class="fa-solid fa-person-swimming"></i></div>
+                <p>Amazing Pool</p>
+              </div></a></div> 
+              <div class="col"> <a href="/listings/categoryListings/camping"><div class="filter hide-on-small ">
+                <div><i class="fa-solid fa-campground"></i></div>
+                <p>Camping</p>
+              </div></a></div> 
+              <div class="col"> <a href="/listings/categoryListings/farms"><div class="filter hide-on-small">
+                <div><i class="fa-solid fa-cow"></i></div>
+                <p>Farms</p>
+              </div></a></div> 
+              <div class="col">  <a href="/listings/categoryListings/arctic"><div class="filter hide-on-small">
+                <div><i class="fa-regular fa-snowflake"></i></div>
+                <p>Arctic</p>
+          </div></a></div>  
+          <div class="toggleSwitch">
+            <div class="form-check-reverse form-switch ms-auto col">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+              <label class="form-check-label" for="flexSwitchCheckDefault"><p>Default total before taxes</p></label>
+            </div>  
+          </div>
+           
+
+          
+             
+     </div>
+  </div>
+
+  
+    <!-- <form method="get" action="/listings/new">
+        <button>Create new listing</button>
+    </form>
+     -->
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+    <% for(let listing of allListings){ %>   
+        <a href="/listings/<%= listing.id %>" class="listing-links">
+        <div class="card cols listing-card">
+            <img src="<%= listing.image.url %>" class="card-img-top" alt="Listing_image" style="height: 20rem;"> 
+            <div class="card-img-overlay"></div>   <!--  when we want to write something on image -->
+            <div class="card-body">
+              <p class="card-text">
+                <b><%= listing.title %></b><br>
+              &#8377;<%=listing.price.toLocaleString('en-IN')%>
+              <i class="tax-info">&nbsp;&nbsp;+18GST</i><br>
+                <!-- <%=listing.location%><br>
+                <%=listing.country%><br>
+                <%=listing.category%><br> -->
+              </p>
+            </div>
+        </div>   
+    </a>
+  <% } %>
+</div>
+    
+ <script>
+  let toggleSwitch=document.getElementById("flexSwitchCheckDefault");
+  toggleSwitch.addEventListener("click",()=>{
+    let taxInfo=document.getElementsByClassName("tax-info");
+    for(info of taxInfo){
+      if(info.style.display != "inline"){
+        info.style.display="inline";
+      }else{
+        info.style.display="none";
+      }
+    }
+  })
+ </script>
+
+

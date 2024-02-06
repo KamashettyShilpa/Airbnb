@@ -1,0 +1,17 @@
+<% layout("/layouts/boilerPlate") -%>
+<div class="row mt-3">
+    <h1 class="mb-3 col-6 offset-3">Login</h1>
+    <div class="col-6 offset-3">
+        <form method="post" novalidate class="needs-validation" action="/login">
+            <div class="mb-3"> <!--  in this case, mb-3 adds a margin-bottom of 1rem (16px) to the element it’s applied to. It’s a handy way to quickly add spacing in your web layouts.  -->
+                <label for="username" class="form-label">Username</label>
+                 <input  type="text" name="username" class="form-control" required>
+             </div>
+             <div class="mb-3"> <!--  in this case, mb-3 adds a margin-bottom of 1rem (16px) to the element it’s applied to. It’s a handy way to quickly add spacing in your web layouts.  -->
+                <label for="password" class="form-label">Password</label>
+                 <input  type="password" name="password" class="form-control" required>
+             </div> 
+                <button class="btn btn-dark">Login</button>
+        </form>
+    </div>
+</div>
