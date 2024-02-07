@@ -99,7 +99,9 @@ app.use((req,res,next)=>{
 //      console.log(registeredUser);
 //      res.send(registeredUser);
 // });
-
+app.get("/",(req,res)=>{
+  res.redirect("/listings");
+})
 app.use("/listings",listingsRouter);//=========listings will be used when sent request to /listings
 app.use("/listings/:id/reviews",reviewsRouter);
 app.use("/",userRouter);
