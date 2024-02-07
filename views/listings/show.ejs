@@ -4,10 +4,11 @@
   const listing=<%- JSON.stringify(listing) %>;
 </script>
  <div class="row mt-3">
-    <div class="col-8 offset-3"> <!--by using row & col & offset img/form will come at center of the page-->
+
+    <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-12 mt-3"> <!--by using row & col & offset img/form will come at center of the page-->
     <h3><%=listing.title%></h3>
    </div>
-        <div class="card col-6 offset-3 show-card listing-card">
+        <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-12 show-card listing-card">
             <img src="<%= listing.image.url %>" class="card-img-top show-img" alt="listing_image">
             <div class="card-body">
               <p class="card-text">Owned by <i><b><%= listing.owner.username %></b></i></p>
@@ -26,7 +27,7 @@
     </form>
  </div>
  <%}%>
- <div class="col-8 offset-3 mt-3">
+ <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-12">
  
   <%if(currUser){%>
     <hr>
@@ -81,6 +82,7 @@
   </div>
   <% }%>
  </div>
+
  <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-12 mt-3">
   <h3>Where you’ll be</h3>
   <div id="map"></div>

@@ -33,31 +33,6 @@
     text-decoration: none;
      color:#222222;
   }
-  @media (max-width: 768px) {
-  .show-on-small {
-    display: block; /* or inline-block, flex, etc. as needed */
-  }
-  .hide-on-small {
-    display: none;
-  }
-}
-@media (max-width: 358px) {
-  .show-on-small {
-    display: none; /* or inline-block, flex, etc. as needed */
-  }
-  .hide-on-small {
-    display: none;
-  }
-}
-/* CSS for larger screens */
-@media (min-width: 768px) {
-  .show-on-small {
-    display: block;
-  }
-  .hide-on-small {
-    display: block; /* or inline-block, flex, etc. as needed */
-    }}
-
   .tax-info{
     display: none;
   }
@@ -70,9 +45,8 @@
     align-items: center;
   }
 </style>
-
-  <div class="row row-cols-lg-1 row-cols-md-1 row-cols-sm-1">
-    <div class="filters mb-2">
+  <div class="row mt-3">
+    <div class="filters col-lg-12 col-md-12 col-sm-12 mt-3 mb-2">
       <div class="col">
         <a href="/listings/categoryListings/iconic cities"><div class="filter show-on-small">
         <div><i class="fa-solid fa-mountain-city"></i></div>
@@ -109,11 +83,7 @@
               <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
               <label class="form-check-label" for="flexSwitchCheckDefault"><p>Default total before taxes</p></label>
             </div>  
-          </div>
-           
-
-          
-             
+          </div>         
      </div>
   </div>
 
