@@ -1,27 +1,34 @@
 <% layout("/layouts/boilerPlate") %>
 <style>
-  .filters{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  .filter{
-    text-align: center;
-    margin-top: 1rem;
-    margin-right: 1rem;
-    margin-left: 1rem;
-    opacity: 0.8;
-  }
-  .filter:hover{
-    opacity: 1;
-  }
-  .filter a{
-    text-decoration: none;
-  }
-  .filter p{
-    font-size: 0.8rem;
-    
-  }
+   #filters {
+      display: flex;
+      /* flex-wrap: wrap; */
+      width: 100% !important;
+      align-items: center;
+      height: 100px !important;
+      overflow: scroll;
+    }
+    #filters a {
+      color: black;
+      text-decoration: none;
+    }
+    .filter {
+      text-align: center;
+      margin-right: 2rem;
+      margin-top: 2rem;
+      opacity: 0.7;
+    }
+
+    .filter:hover {
+      opacity: 1 !important;
+      cursor: pointer;
+      transform: scale(1.05) !important;
+      transition: 100ms ease all !important;
+    }
+
+    .filter p {
+      font-size: 0.95rem;
+    }
   .form-check-label p{
     font-size: 0.8rem;
   }
@@ -45,47 +52,48 @@
     align-items: center;
   }
 </style>
-  <div class="row mt-3">
-    <div class="filters col-lg-12 col-md-12 col-sm-12 mt-3 mb-2">
-      <div class="col">
-        <a href="/listings/categoryListings/iconic cities"><div class="filter show-on-small">
-        <div><i class="fa-solid fa-mountain-city"></i></div>
-        <p>Iconic Cities</p>
-        </div></a>
-      </div>
-      <div class="col"><a href="/listings/categoryListings/mountain" ><div class="filter show-on-small">
-        <div><i class="fa-solid fa-mountain"></i></div>
-        <p>mountain</p>
-      </div></a></div>   
-      <div class="col"><a href="/listings/categoryListings/castle"><div class="filter show-on-small">
+  <div id="filters">
+        <a href="/listings/categoryListings/iconic cities">
+            <div class="filter">
+             <div><i class="fa-solid fa-mountain-city"></i></div>
+             <p>Iconic Cities</p>
+            </div>
+        </a>
+     <a href="/listings/categoryListings/mountain" >
+           <div class="filter">
+          <div><i class="fa-solid fa-mountain"></i></div>
+           <p>mountain</p>
+         </div>
+       </a> 
+     <a href="/listings/categoryListings/castle">
+       <div class="filter">
         <div><i class="fa-brands fa-fort-awesome"></i></div>
            <p>Castles</p>
-         </div></a></div>
+         </div></a>
  
-              <div class="col"><a href="/listings/categoryListings/Amazing pool"><div class="filter hide-on-small">
+              <a href="/listings/categoryListings/Amazing pool"><div class="filter">
                 <div><i class="fa-solid fa-person-swimming"></i></div>
                 <p>Amazing Pool</p>
-              </div></a></div> 
-              <div class="col"> <a href="/listings/categoryListings/camping"><div class="filter hide-on-small ">
+              </div></a>
+             <a href="/listings/categoryListings/camping"><div class="filter">
                 <div><i class="fa-solid fa-campground"></i></div>
                 <p>Camping</p>
-              </div></a></div> 
-              <div class="col"> <a href="/listings/categoryListings/farms"><div class="filter hide-on-small">
+              </div></a>
+              <a href="/listings/categoryListings/farms"><div class="filter">
                 <div><i class="fa-solid fa-cow"></i></div>
                 <p>Farms</p>
-              </div></a></div> 
-              <div class="col">  <a href="/listings/categoryListings/arctic"><div class="filter hide-on-small">
+              </div></a>
+             <a href="/listings/categoryListings/arctic"><div class="filter">
                 <div><i class="fa-regular fa-snowflake"></i></div>
                 <p>Arctic</p>
-          </div></a></div>  
+          </div></a>
           <div class="toggleSwitch">
             <div class="form-check-reverse form-switch ms-auto col">
               <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-              <label class="form-check-label" for="flexSwitchCheckDefault"><p>Default total before taxes</p></label>
+              <label class="form-check-label" for="flexSwitchCheckDefault">Default total before taxes</label>
             </div>  
           </div>         
      </div>
-  </div>
 
   
     <!-- <form method="get" action="/listings/new">
