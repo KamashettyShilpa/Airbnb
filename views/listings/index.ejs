@@ -7,6 +7,8 @@
       align-items: center;
       height: 100px !important;
       overflow: scroll;
+      overflow: hidden;
+
     }
     #filters a {
       color: black;
@@ -43,14 +45,18 @@
   .tax-info{
     display: none;
   }
-  .toggleSwitch{
-    border: 1px solid black;
-    height:3.25rem;
-    border-radius: 1rem;
-    padding: 1rem 1rem 0.5rem 1rem;
-    display: flex;
-    align-items: center;
-  }
+  .tax-toggle {
+      border: 1px solid black;
+      border-radius: 1rem;
+      height: 3.58rem;
+      padding: 1rem;
+      /* margin-left: 3rem; */
+      display: flex;
+      min-width: 250px;
+      width: fit-content;
+      margin-top: 0.8rem;
+      align-items: center;
+    }
 </style>
   <div id="filters">
         <a href="/listings/categoryListings/iconic cities">
@@ -87,12 +93,25 @@
                 <div><i class="fa-regular fa-snowflake"></i></div>
                 <p>Arctic</p>
           </div></a>
-          <div class="toggleSwitch">
-            <div class="form-check-reverse form-switch ms-auto col">
+          <a href="/listings/categoryListings/swimming"><div class="filter">
+            <div><i class="fa-solid fa-person-swimming"></i></div>
+            <p>Swimming</p>
+            </div></a>
+            <a href="/listings/categoryListings/beachfront"><div class="filter">
+              <div><i class="fa-solid fa-umbrella-beach"></i></div>
+              <p>Beachfront</p>
+        </div></a>
+        <a href="/listings/categoryListings/countryside"><div class="filter">
+          <div><i class="fa-solid fa-mountain-sun"></i></div>
+          <p>Country side</p>
+      </div></a>
+          
+          <div class="tax-toggle">
+            <div class="form-check-reverse form-switch">
               <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-              <label class="form-check-label" for="flexSwitchCheckDefault">Default total before taxes</label>
-            </div>  
-          </div>         
+              <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
+            </div>
+          </div>
      </div>
 
   
