@@ -123,8 +123,11 @@
     <% for(let listing of allListings){ %>   
         <a href="/listings/<%= listing.id %>" class="listing-links">
         <div class="card cols listing-card">
-            <img src="<%= listing.image.url %>" class="card-img-top" alt="Listing_image" style="height: 20rem;"> 
-            <div class="card-img-overlay"></div>   <!--  when we want to write something on image -->
+          <div class="imgHovers mb-2" style="box-shadow: 10px 10px 10px rgba(0,0,0, 0.45);">
+            <img src="<%= listing.image.url %>" class="card-img-top imgHovers" id="imgh" alt="Listing_image" style="height: 20rem;"> 
+            <!-- <div class="card-img-overlay"></div>    when we want to write something on image -->
+          </div>
+            
             <div class="card-body">
               <p class="card-text">
                 <b><%= listing.title %></b><br>
