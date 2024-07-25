@@ -53,8 +53,8 @@ body{
     margin-bottom: 2rem;
 }
 .card-img-top{
-    border-radius: 1rem !important;
-    width: 100 !important;
+    border-radius: 1.2rem !important;
+    /* width: 100 !important; */
     object-fit: cover !important;
 }
 .card-body{
@@ -67,13 +67,30 @@ body{
     text-decoration: none;
 }
 /* card clicking effect or overlay effect */
-.card-img-overlay{
+/* .card-img-overlay{
     opacity: 0;
-}
+} */
 .card-img-overlay:hover{
     opacity: 0.2; /* if we gave opacity 1 then background-color: of image will be white so we gave 0.2; */
     background-color: white;
 }
+
+#imgh{
+    height: 20rem;
+    transition: 0.5s ease-in-out 0s;
+    }
+    
+    
+ #imgh:hover{
+    transform: scale(1.05) !important;
+    transition: 0.5s ease-in-out 0s !important;
+    }
+    
+.imgHovers{ 
+    overflow: hidden;
+    border-radius: 20px;
+    cursor: pointer;
+    }
 /* NEW PAGE */
 .add-btn{
     background-color: #fe424d !important;
@@ -103,6 +120,7 @@ body{
     /* Set a height so the map has room to display */
     height: 400px; 
     }
+    
 .edit_img{
    height: 300px;
    width:250px
