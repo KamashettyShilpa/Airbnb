@@ -7,6 +7,12 @@
   zoom: 9 // starting zoom
   });
   console.log(listing.geometry.coordinates);
+  // const marker1 = new mapboxgl.Marker()
+  // .setLngLat(listing.geometry.coordinates)
+  // .setPopup(
+  //   new mapboxgl.Popup({offset: 25, className: 'my-class'})
+  //   .setHTML(`<h4>${listing.location}</h4><p>Exact listing location</p>`))
+  //   .addTo(map);
 //==========================================================
    map.on('load', () => {
       // Load an image from an external URL.
@@ -65,3 +71,6 @@
          .addTo(map);
  });
       });
+
+
+      
